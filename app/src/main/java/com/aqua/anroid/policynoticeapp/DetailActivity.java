@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
-    private com.example.recycler_test.DetailAdapter detailAdapter;
+    private com.aqua.anroid.policynoticeapp.DetailAdapter detailAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class DetailActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        detailAdapter = new com.example.recycler_test.DetailAdapter();
+        detailAdapter = new com.aqua.anroid.policynoticeapp.DetailAdapter();
         recyclerView.setAdapter(detailAdapter);
     }
     private void getData() {
@@ -41,7 +41,7 @@ public class DetailActivity extends AppCompatActivity {
         );
         for (int i = 0; i < listTitle.size(); i++) {
             // 각 List의 값들을 data 객체에 set 해줍니다.
-            com.example.recycler_test.DetailData detailData = new com.example.recycler_test.DetailData();
+            com.aqua.anroid.policynoticeapp.DetailData detailData = new com.aqua.anroid.policynoticeapp.DetailData();
             detailData.setTitle(listTitle.get(i));
             detailData.setContent(listContent.get(i));
             //data.setResId(listResId.get(i));

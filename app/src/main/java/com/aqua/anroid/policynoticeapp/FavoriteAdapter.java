@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class FavoriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     // adapter에 들어갈 list 입니다.
-    private ArrayList<com.example.recycler_test.FavoriteData> listData = new ArrayList<com.example.recycler_test.FavoriteData>();
+    private ArrayList<com.aqua.anroid.policynoticeapp.FavoriteData> listData = new ArrayList<com.aqua.anroid.policynoticeapp.FavoriteData>();
     private final int TYPE_HEADER = 0;
     private final int TYPE_ITEM = 1;
     private final int TYPE_FOOTER = 2;
@@ -26,10 +26,10 @@ public class FavoriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         View view;
         if (viewType == TYPE_HEADER) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.favorite_header, parent, false);
-            holder = new com.example.recycler_test.HeaderViewHolder(view);
+            holder = new com.aqua.anroid.policynoticeapp.HeaderViewHolder(view);
         } else if (viewType == TYPE_FOOTER) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.favorite_footer, parent, false);
-            holder = new com.example.recycler_test.FooterViewHolder(view);
+            holder = new com.aqua.anroid.policynoticeapp.FooterViewHolder(view);
         } else {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.favorite_item, parent, false);
             holder = new ItemViewHolder(view);
@@ -38,10 +38,10 @@ public class FavoriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof com.example.recycler_test.HeaderViewHolder) {
-            com.example.recycler_test.HeaderViewHolder headerViewHolder = (com.example.recycler_test.HeaderViewHolder) holder;
-        } else if (holder instanceof com.example.recycler_test.FooterViewHolder) {
-            com.example.recycler_test.FooterViewHolder footerViewHolder = (com.example.recycler_test.FooterViewHolder) holder;
+        if (holder instanceof com.aqua.anroid.policynoticeapp.HeaderViewHolder) {
+            com.aqua.anroid.policynoticeapp.HeaderViewHolder headerViewHolder = (com.aqua.anroid.policynoticeapp.HeaderViewHolder) holder;
+        } else if (holder instanceof com.aqua.anroid.policynoticeapp.FooterViewHolder) {
+            com.aqua.anroid.policynoticeapp.FooterViewHolder footerViewHolder = (com.aqua.anroid.policynoticeapp.FooterViewHolder) holder;
         } else {
             // Item을 하나, 하나 보여주는(bind 되는) 함수입니다.
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
@@ -53,7 +53,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         // RecyclerView의 총 개수 입니다.
         return listData.size() + 2;
     }
-    void addItem(com.example.recycler_test.FavoriteData favoriteData) {
+    void addItem(com.aqua.anroid.policynoticeapp.FavoriteData favoriteData) {
         // 외부에서 item을 추가시킬 함수입니다.
         listData.add(favoriteData);
     }
@@ -69,7 +69,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             textView1 = itemView.findViewById(R.id.favorite_list_1);
             textView2 = itemView.findViewById(R.id.favorite_list_text);
         }
-        void onBind(com.example.recycler_test.FavoriteData detailData, int position) {
+        void onBind(com.aqua.anroid.policynoticeapp.FavoriteData detailData, int position) {
             textView1.setText(detailData.getTitle());
             textView2.setText(detailData.getContent());
         }

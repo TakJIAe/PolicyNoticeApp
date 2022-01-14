@@ -28,7 +28,7 @@ public class Chatbot_Main extends AppCompatActivity {
     public void onClick_Inquiry(View view)
     {
        // Toast.makeText(getApplicationContext(),"1대1문의",Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), com.mobile.finalproject.Chatbot_Inquiry.class);
+        Intent intent = new Intent(getApplicationContext(), com.aqua.anroid.policynoticeapp.Chatbot_Inquiry.class);
         startActivity(intent);
 
     }

@@ -11,7 +11,7 @@
         android:orientation="horizontal"
         >
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/menubtn"
             android:layout_width="50sp"
             android:layout_height="50sp"
             android:layout_marginTop="7sp"

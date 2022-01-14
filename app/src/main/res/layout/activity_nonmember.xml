@@ -68,7 +68,7 @@
                 android:textSize="24dp" />
 
             <Spinner
-                android:id="@+id/s_Npopular"
+                android:id="@+id/s_npopular"
                 android:layout_width="290dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"

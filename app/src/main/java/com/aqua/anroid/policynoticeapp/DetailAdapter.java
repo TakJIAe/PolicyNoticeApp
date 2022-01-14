@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class DetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     // adapter에 들어갈 list 입니다.
-    private ArrayList<com.example.recycler_test.DetailData> listData = new ArrayList<>();
+    private ArrayList<com.aqua.anroid.policynoticeapp.DetailData> listData = new ArrayList<>();
     private final int TYPE_HEADER = 0;
     private final int TYPE_ITEM = 1;
     private final int TYPE_FOOTER = 2;
@@ -26,22 +26,22 @@ public class DetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         View view;
         if (viewType == TYPE_HEADER) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_detail_header, parent, false);
-            holder = new com.example.recycler_test.HeaderViewHolder(view);
+            holder = new com.aqua.anroid.policynoticeapp.HeaderViewHolder(view);
         } else if (viewType == TYPE_FOOTER) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_detail_footer, parent, false);
-            holder = new com.example.recycler_test.FooterViewHolder(view);
+            holder = new com.aqua.anroid.policynoticeapp.FooterViewHolder(view);
         } else {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_datail_item, parent, false);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_detail_item, parent, false);
             holder = new ItemViewHolder(view);
         }
         return holder;
     }
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof com.example.recycler_test.HeaderViewHolder) {
-            com.example.recycler_test.HeaderViewHolder headerViewHolder = (com.example.recycler_test.HeaderViewHolder) holder;
-        } else if (holder instanceof com.example.recycler_test.FooterViewHolder) {
-            com.example.recycler_test.FooterViewHolder footerViewHolder = (com.example.recycler_test.FooterViewHolder) holder;
+        if (holder instanceof com.aqua.anroid.policynoticeapp.HeaderViewHolder) {
+            com.aqua.anroid.policynoticeapp.HeaderViewHolder headerViewHolder = (com.aqua.anroid.policynoticeapp.HeaderViewHolder) holder;
+        } else if (holder instanceof com.aqua.anroid.policynoticeapp.FooterViewHolder) {
+            com.aqua.anroid.policynoticeapp.FooterViewHolder footerViewHolder = (com.aqua.anroid.policynoticeapp.FooterViewHolder) holder;
         } else {
             // Item을 하나, 하나 보여주는(bind 되는) 함수입니다.
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
@@ -53,7 +53,7 @@ public class DetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         // RecyclerView의 총 개수 입니다.
         return listData.size() + 2;
     }
-    void addItem(com.example.recycler_test.DetailData detailData) {
+    void addItem(com.aqua.anroid.policynoticeapp.DetailData detailData) {
         // 외부에서 item을 추가시킬 함수입니다.
         listData.add(detailData);
     }
@@ -69,7 +69,7 @@ public class DetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             textView1 = itemView.findViewById(R.id.search_list_item_1);
             textView2 = itemView.findViewById(R.id.search_list_item_text);
         }
-        void onBind(com.example.recycler_test.DetailData detailData, int position) {
+        void onBind(com.aqua.anroid.policynoticeapp.DetailData detailData, int position) {
             textView1.setText(detailData.getTitle());
             textView2.setText(detailData.getContent());
         }
